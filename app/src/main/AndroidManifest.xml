@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="co.edu.eafit.pi1.sconnection" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!--
+ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".Landing"
+            android:label="@string/title_activity_landing"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".User"
+            android:label="@string/title_activity_user" >
+        </activity>
+        <activity
+            android:name=".Provider"
+            android:label="@string/title_activity_provider" >
+        </activity>
+
+        <service
+            android:name=".connection.services.LoginConnectionService"
+            android:exported="false" />
+        <service
+            android:name=".connection.services.RegisterConnectionService"
+            android:exported="false" />
+        <service
+            android:name=".connection.services.SetLocationConnectionService"
+            android:exported="false" />
+        <service
+            android:name=".connection.services.GetLocationConnectionService"
+            android:exported="false" />
+        <service
+            android:name=".connection.services.GetProvidersService"
+            android:exported="false" />
+        <service
+            android:name=".connection.services.GetServiceListService"
+            android:exported="false" />
+        <service
+            android:name=".connection.services.SetServiceService"
+            android:exported="false" />
+        <service
+            android:name=".connection.services.ArrivedStatusService"
+            android:exported="false" />
+        <service
+            android:name=".connection.services.SetArrivalConfirmation"
+            android:exported="false" />
+        <service
+            android:name=".connection.services.HttpRequest"
+            android:exported="false" />
+
+        <activity
+            android:name=".Register"
+            android:parentActivityName=".Landing"
+            android:label="@string/title_activity_register" >
+        </activity>
+        <activity
+            android:name=".ProviderProfile"
+            android:label="@string/title_activity_provider_profile" >
+        </activity>
+        <activity
+            android:name=".ProviderServices"
+            android:label="@string/title_activity_provider_services" >
+        </activity>
+        <activity
+            android:name=".UserProviderSearch"
+            android:label="@string/title_activity_provider_search" >
+        </activity>
+        <activity
+            android:name=".UserServiceList"
+            android:label="@string/title_activity_user_service_list" >
+        </activity>
+        <activity
+            android:name=".UserCreateService"
+            android:parentActivityName=".User"
+            android:label="@string/title_activity_user_create_service">
+        </activity>
+        <activity android:name=".UserServiceDetail" >
+        </activity>
+        <activity android:name=".dialogs.ConfirmArrival" >
+        </activity>
+        <activity android:name=".UserProviderSearchDetail" >
+        </activity>
+        <activity
+            android:name=".ProviderRegister"
+            android:label="@string/title_activity_provider_register" >
+        </activity>
+        <activity
+            android:name=".ServiceConfirm"
+            android:label="@string/title_activity_service_confirm" >
+        </activity>
+        <activity
+            android:name=".ServiceRate"
+            android:label="@string/title_activity_service_rate" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,1 @@
+Sconnection is a mobile apt that is meant to connect users offering services to users who need them.
